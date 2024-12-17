@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  height: 1000vh;
 }
 
 
@@ -41,16 +42,16 @@ body {
 .header-li{
   display: flex;
   list-style: none;
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 18px;
+  font-family: "Cabin";
+  font-weight: bolder;
+  font-size: 15px;
   cursor: pointer;
 }
 
 
 .header-menu-icon {
-  font-family: 'Roboto';
-  font-size: 18px;
+  font-family: 'Cabin';
+  font-size: 15px;
 }
 
 
@@ -62,6 +63,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-bottom: 7vh;
 }
 
 .about-slider {
@@ -69,7 +71,6 @@ body {
   width: 80vw;
   height: 80vh;
   position: relative;
-  overflow: hidden;
 }
 .about-slide-wrapper {
   width: 100%;
@@ -79,12 +80,42 @@ body {
   height: 100%;
   position: relative;
 }
+
+.about-slider-left-arrow {
+  position: relative;
+  width: 30px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  left: 10px;
+  z-index: 9999;
+  transform-origin: center;
+}
+
+.about-slider-right-arrow {
+  position: absolute;
+  width: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  z-index: 9999;
+}
+
+.about-slider-right-arrow:hover {
+  position: absolute;
+  width: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  z-index: 9999;
+}
+
 .about-slide-img-wrapper {
   border-radius: 15px;
   overflow: hidden;
   height: 100%;
   width: 100%;
   position: absolute;
+  box-shadow: 2px 6px 12px #00000014;
 }
 
 .about-slide-img {
@@ -101,8 +132,8 @@ body {
 
 .about-slide-main-caption {
   color: white;
-  font-family: "Roboto";
-  font-size: 25px;
+  font-family: "Cabin";
+  font-size: 28px;
   text-shadow: 
   1px 1px 2px rgba(0, 0, 0, 0.8),  /* Subtle shadow */
   2px 2px 4px rgba(82, 82, 82, 0.9),  /* Bolder shadow */
@@ -112,14 +143,54 @@ body {
 
 
 
+/*BANNERS*/
 
+.home-banner-wrapper {
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  box-shadow: 2px 6px 12px #00000014;
+  position: relative;
+  margin-top: 20vh;
+}
 
+.home-banner-img {
+  width: 100%;
+  object-fit: cover;
+  transform: translateY(-350px);
+  z-index: 1;
+}
+
+.banner-caption-wrapper {
+  z-index: 2;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.banner-caption {
+  width: max-content;
+  text-wrap: nowrap;
+  z-index: 2;
+  color: white;
+  margin: 0px;
+  font-family: "Cabin";
+  font-weight: 1000;
+  font-size: 28px;
+  text-shadow: 
+  1px 1px 2px rgba(0, 0, 0, 0.8),  /* Subtle shadow */
+  2px 2px 4px rgba(82, 82, 82, 0.9),  /* Bolder shadow */
+  0 0 8px rgba(59, 59, 59, 0.9), /* Inner glow */
+  0 0 16px rgba(197, 197, 197, 0.7);
+}
 /*REVIEWS CSS*/
 
 .reviews-main-wrapper {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   align-items: center;
 }
 
@@ -138,7 +209,7 @@ body {
   width: 22vw;
   height: 50vh;
   border-radius: 15px;
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(236, 236, 236);
   box-shadow: 2px 6px 12px #00000014;
 }
 
@@ -166,7 +237,7 @@ body {
 
 .user-review {
   text-align: center;
-  font-family: 'Roboto';
+  font-family: 'Cabin';
   width: 100%;
   font-size: 14.5px;
   font-weight: 400;
@@ -175,6 +246,153 @@ body {
 .review-user-name {
   padding: 0px;
   margin: 0px;
-  font-family: 'Roboto';
+  font-family: 'Cabin';
   font-size: 18px;
 }
+
+
+.home-reviews-caption-wrapper{
+
+}
+.home-reviews-caption{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cabin";
+  padding-top: 40px;
+  gap: 3.5px;
+}
+
+.write-review-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(51, 162, 252);
+}
+
+.write-review-link:hover {
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+
+
+/*BOOKING CALANDER*/
+
+.calendar-container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  width: 60%;
+  background-color: rgb(242, 242, 242);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 2px 6px 12px #00000014;
+}
+
+.calender-header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.left-arrow-button-cal {
+  width: max-content;
+  height: max-content;
+  border-radius: 7px;
+  border: none;
+  padding: 10px;
+  box-shadow: 2px 6px 16px #00000014;
+  cursor: pointer;
+  will-change: scale;
+  transition: scale 0.12s ease;
+}
+
+.right-arrow-button-cal {
+  width: max-content;
+  height: max-content;
+  border-radius: 7px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  will-change: scale;
+  transition: scale 0.12s ease;
+}
+
+.left-arrow-button-cal:hover{
+  scale: 1.05;
+}
+.right-arrow-button-cal:hover{
+  scale: 1.05;
+}
+
+.left-arrow-cal {
+  width: 20px
+}
+
+.right-arrow-cal {
+  width: 20px;
+  rotate: 180deg;
+}
+.date-title {
+  font-family: "Cabin";
+  width: 250px;
+  letter-spacing: 1.8px;
+}
+.day-header {
+  font-weight: bold;
+  font-family: "Cabin";
+  letter-spacing: 1.1px;
+}
+
+.day-cell {
+  padding: 37px 30px 37px 30px;
+  cursor: pointer;
+  text-align: center;
+  background-color: white;
+  position: relative;
+  border-radius: 3px;
+  will-change: scale;
+  transition: scale 0.25s ease;
+  box-shadow: 2px 6px 16px #00000014;
+}
+.day-cell-num {
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 13.8px;
+  font-family: "Cabin";
+  font-weight: 500;
+  border-radius: 3.5px;
+}
+.day-cell:hover {
+  background-color: #b1b1b1;
+  scale: 1.05;
+  color: white;
+}
+
+.calendarselected {
+  background-color: #828282;
+  color: white;
+}
+
+.selected-date {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  font-family: "Cabin";
+}
+

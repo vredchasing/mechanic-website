@@ -2,7 +2,7 @@ function HomeReviews (){
 
     const reviews = [
         {name:'- Emily Smith', photo:'/public/about-slider-img1.jpg', review:'"Speedy service with an attention to detail and customer satisfaction."'},
-        {name:'- Brain Basset', photo:'/public/profile-picture2.jpg', review:'"I went in for an oil change and they did it very quickly and professionally."'},
+        {name:'- Brain Kent', photo:'/public/profile-picture2.jpg', review:'"I went in for an oil change and they did it very quickly and professionally."'},
         {name:'- James M.', photo:'/public/profile-picture3.jpg', review:'"Great customer service, they work with integrity and excellence! Highly recommend them."'},
     ]
 
@@ -33,6 +33,9 @@ function HomeReviews (){
                     })
                 }
 
+            </div>
+            <div className="home-reviews-caption-wrapper">
+                <p className="home-reviews-caption">Would you like to write a review? Please visit this <p className="write-review-link">link.</p></p>
             </div>
         </section>
     )
