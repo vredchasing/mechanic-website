@@ -2,6 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   height: 1000vh;
+  background-color: #000000;
 }
 
 
@@ -29,6 +30,17 @@ body {
 
 .logo {
   width: 70px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: white;
+  padding: 0;
+  letter-spacing: 3px;
+
+  text-shadow: 
+  1px 1px 2px rgba(0, 0, 0, 0.8),  /* Subtle shadow */
+  2px 2px 4px rgba(82, 82, 82, 0.9),  /* Bolder shadow */
+  0 0 8px rgba(59, 59, 59, 0), /* Inner glow */
+  0 0 16px rgba(197, 197, 197, 0.3);
 }
 
 
@@ -42,7 +54,7 @@ body {
 .header-li{
   display: flex;
   list-style: none;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   font-weight: bolder;
   font-size: 15px;
   cursor: pointer;
@@ -50,7 +62,7 @@ body {
 
 
 .header-menu-icon {
-  font-family: 'Cabin';
+  font-family: 'Cabin', sans-serif;
   font-size: 15px;
 }
 
@@ -134,7 +146,7 @@ body {
 
 .about-slide-main-caption {
   color: white;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   font-size: 28px;
   text-shadow: 
   1px 1px 2px rgba(0, 0, 0, 0.8),  /* Subtle shadow */
@@ -143,6 +155,9 @@ body {
   0 0 16px rgba(197, 197, 197, 0.7);
 }
 
+
+
+/*ABOUT SECTION*/
 
 
 /*BANNERS*/
@@ -176,7 +191,7 @@ body {
   z-index: 2;
   color: white;
   margin: 0px;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   font-weight: 1000;
   font-size: 28px;
   text-shadow: 
@@ -239,7 +254,7 @@ body {
 
 .user-review {
   text-align: center;
-  font-family: 'Cabin';
+  font-family: 'Cabin', sans-serif;
   width: 100%;
   font-size: 14.5px;
   font-weight: 400;
@@ -248,7 +263,7 @@ body {
 .review-user-name {
   padding: 0px;
   margin: 0px;
-  font-family: 'Cabin';
+  font-family: 'Cabin', sans-serif;
   font-size: 18px;
 }
 
@@ -260,7 +275,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   padding-top: 40px;
   gap: 3.5px;
 }
@@ -280,30 +295,59 @@ body {
 
 /*BOOKING CALANDER + HOME BOOKING CSS*/
 
+.booking-master-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  width: 100%;
+}
+
 .home-booking-master-wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  position: relative;
+}
+
+.booking-main-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid purple;
+  width: 100%;
 }
 
 .home-booking-left-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 40%;
 }
 .home-booking-left-caption {
-  font-family: 'Lato';
-  font-weight: 900;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-size: 70px;
   width: 450px;
   text-align: start;
   line-height: 75px;
   margin: 0px;
   letter-spacing: 2px;
+  color: white;
+
+  text-shadow: 
+  1px 1px 2px rgba(0, 0, 0, 0.8),  /* Subtle shadow */
+  2px 2px 4px rgba(82, 82, 82, 0.9),  /* Bolder shadow */
+  0 0 8px rgba(59, 59, 59, 0), /* Inner glow */
+  0 0 16px rgba(197, 197, 197, 0.3);
+
 }
 
 .home-booking-left-caption2 {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   font-size: 15px;
   width: 450px;
@@ -316,7 +360,7 @@ body {
 .home-booking-left-caption3 {
   display: flex;
   gap: 3.5px;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   font-size: 15px;
   width: 450px;
@@ -334,7 +378,7 @@ body {
   
 }
 .home-booking-left-book-button {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 1000;
   font-size: 30px;
   margin: 0px;
@@ -348,7 +392,9 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 45%;
+  height: 100vh;
+  border: 1px solid blue;   
 }
 
 .calendar-grid-wrapper {
@@ -370,11 +416,21 @@ body {
   box-shadow: 2px 6px 12px #00000014;
 }
 
-.calender-header-content {
+.calendar-header-content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+.calendar-header-content-left {
+  display: flex;
+  border: 1px solid blue;
+}
+.calendar-header-content-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .left-arrow-button-cal {
   display: flex;
@@ -424,14 +480,16 @@ body {
   rotate: 180deg;
 }
 .date-title {
-  font-family: "Cabin";
+  display: flex;
+  justify-content: center;
+  font-family: "Cabin", sans-serif;
   width: 250px;
   letter-spacing: 1.8px;
 }
 .day-header {
   font-size: 14px;
   font-weight: bold;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   letter-spacing: 1.1px;
 }
 
@@ -457,7 +515,7 @@ body {
   top: 5px;
   left: 6px;
   font-size: 13.8px;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
   font-weight: 500;
   border-radius: 3.5px;
   width: 25px;
@@ -481,7 +539,7 @@ body {
   border-radius: 100vw;
   width: 25px;
   height: 25px;
-  background-color:palevioletred;
+  background-color: rgb(255, 122, 33);
   color: white;
 }
 
@@ -489,10 +547,28 @@ body {
   margin-top: 20px;
   font-size: 16px;
   color: #333;
-  font-family: "Cabin";
+  font-family: "Cabin", sans-serif;
 }
 
 
 
 /*BOOKING TIME SLOTS CSS*/
 
+.booking-time-slots-wrapper {
+  overflow: hidden;
+  border-radius: 15px;
+  position: absolute;
+  width: 35%;
+  height: 60vh;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(241, 241, 241);
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.3s ease;
+}
+
+
+
+
+
+/*animations+keyframes css*/

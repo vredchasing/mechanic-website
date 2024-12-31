@@ -1,8 +1,10 @@
+import About from "../Components/HomeComponents/About"
 import AboutSlider from "../Components/HomeComponents/AboutSlider"
 import Banner from "../Components/HomeComponents/Banners/banner"
 import HomeReviews from "../Components/HomeComponents/Reviews"
 import BookingCalendar from "./Booking/Booking" 
 import BookingTimeSlots from "./Booking/BookingTimeSlots"
+import CarSelfService from "./Car Self Service/CarSelfService"
 import HomeBookingLeft from "./HomeBookingLeft"
 
 function Home (){
@@ -10,12 +12,10 @@ function Home (){
 
     return(
         <section>
-            <AboutSlider></AboutSlider>
+            <CarSelfService></CarSelfService>
             <section className="home-booking-master-wrapper">
-                <HomeBookingLeft></HomeBookingLeft>
                 <BookingCalendar></BookingCalendar>
             </section>
-            <BookingTimeSlots></BookingTimeSlots>
             <HomeReviews></HomeReviews>
         </section>
     )

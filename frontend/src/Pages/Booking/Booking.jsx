@@ -1,7 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import BookingTimeSlots from "./BookingTimeSlots";
+import HomeBookingLeft from "../HomeBookingLeft";
 
 function BookingCalendar() {
   const [actualDate, setActualDate] = useState();
+
+  // Forwarded refs
+
+  const bookingTimeSlotsRef = useRef()
+
 
   useEffect(() => {
     setActualDate(new Date());
@@ -25,6 +32,7 @@ function BookingCalendar() {
 
   const handleSelectDate = (day) => {
     setSelectedDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
+    bookingTimeSlotsRef.current.close()
   };
 
   const currentMonth = currentDate.getMonth();
@@ -48,57 +56,71 @@ function BookingCalendar() {
   };
 
   return (
-    <div className="calendar-container">
-      <div className="calender-header-content">
-        <button className="left-arrow-button-cal" onClick={handlePrevMonth}>
-          <img className="left-arrow-cal" src="arrow.svg" alt="Previous Month" />
-        </button>
-        <h2 className="date-title">{`${currentDate.toLocaleString("default", {
-          month: "long",
-        })} ${currentYear}`}</h2>
-        <button className="right-arrow-button-cal" onClick={handleNextMonth}>
-          <img className="right-arrow-cal" src="arrow.svg" alt="Next Month" />
-        </button>
+  
+    <section className="booking-master-wrapper">
+
+      <div className="calendar-header-content">
+        <div className="calendar-header-content-left">
+          <p>left</p>
+        </div>
+        <div className="calendar-header-content-right">
+          <button className="left-arrow-button-cal" onClick={handlePrevMonth}>
+            <img className="left-arrow-cal" src="arrow.svg" alt="Previous Month" />
+          </button>
+          <h2 className="date-title">{`${currentDate.toLocaleString("default", {
+            month: "long",
+          })} ${currentYear}`}</h2>
+          <button className="right-arrow-button-cal" onClick={handleNextMonth}>
+            <img className="right-arrow-cal" src="arrow.svg" alt="Next Month" />
+          </button>
+        </div>
       </div>
 
-      <div className="calendar-grid-wrapper">
-        <div className="calendar-grid">
-          {daysOfWeek.map((day, index) => (
-            <div key={index} className="day-header">
-              {day}
+      <section className="booking-main-content-wrapper">
+        <HomeBookingLeft ref={bookingTimeSlotsRef}></HomeBookingLeft>
+        <div className="calendar-container">
+          <div className="calendar-grid-wrapper">
+            <div className="calendar-grid">
+              {daysOfWeek.map((day, index) => (
+                <div key={index} className="day-header">
+                  {day}
+                </div>
+              ))}
+
+              {daysWithBlanks.map((day, index) =>
+                day ? (
+                  <div
+                    key={index}
+                    className={`day-cell ${
+                      isSelectedDate(day) ? "calendarselected" : ''}`}
+                    onClick={() => handleSelectDate(day)}
+                  >
+                    <p className={`day-cell-num ${isCurrentDay(day) ? "current-day" : ""}`}>
+                        {day}
+                    </p>
+                  </div>
+                ) : (
+                  <div
+                    key={index}
+                    className={`day-cell-num ${
+                      isCurrentDay(day) ? "current-day" : ""
+                    }`}
+                  ></div>
+                )
+              )}
             </div>
-          ))}
+          </div>
 
-          {daysWithBlanks.map((day, index) =>
-            day ? (
-              <div
-                key={index}
-                className={`day-cell ${
-                  isSelectedDate(day) ? "calendarselected" : ''}`}
-                onClick={() => handleSelectDate(day)}
-              >
-                <p className={`day-cell-num ${isCurrentDay(day) ? "current-day" : ""}`}>
-                    {day}
-                </p>
-              </div>
-            ) : (
-              <div
-                key={index}
-                className={`day-cell-num ${
-                  isCurrentDay(day) ? "current-day" : ""
-                }`}
-              ></div>
-            )
+          {selectedDate && (
+            <div className="selected-date">
+              Selected Date: {selectedDate.toLocaleDateString()}
+            </div>
           )}
-        </div>
-      </div>
 
-      {selectedDate && (
-        <div className="selected-date">
-          Selected Date: {selectedDate.toLocaleDateString()}
         </div>
-      )}
-    </div>
+      </section>
+
+    </section>
   );
 }
 

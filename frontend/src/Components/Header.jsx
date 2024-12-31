@@ -4,7 +4,7 @@ function Header (){
         <header className="header-main-wrapper">
             <div className="header-wrapper">
                 <div className="header-left-wrapper">
-                    <img className="logo" src="/bishals-logo.png"></img>
+                    <h1 className="logo">CARPI</h1>
                 </div>
                 <div className="header-right-wrapper">
                     <ul className="header-ul">

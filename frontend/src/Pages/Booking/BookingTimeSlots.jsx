@@ -1,16 +1,36 @@
-import { useRef } from "react"
+import { useRef, forwardRef, useImperativeHandle } from "react";
 
-function BookingTimeSlots (){
+const BookingTimeSlots = forwardRef((props, ref) => {
+  const timeSlotsWrapperRef = useRef(null);
 
+  useImperativeHandle(ref, () => ({
+    open: timeSlotsOpen,
+    close: timeSlotsClose,
+  }));
 
-    const timeSlotsWrapperRef = useRef(null)
+  function timeSlotsOpen() {
+    const wrapper = timeSlotsWrapperRef.current;
+    if (wrapper) {
+      wrapper.style.clipPath = "inset(100% 0 0 0)";
+      wrapper.style.transform = "scale(1)";
+    }
+  }
 
-    return(
-        <section className="booking-time-slots-wrapper" ref={timeSlotsWrapperRef}>
-            <p>hello</p>
-        </section>
-    )
+  function timeSlotsClose() {
+    const wrapper = timeSlotsWrapperRef.current;
+    if (wrapper) {
+      wrapper.style.clipPath = "inset(0 0 0 0)";
+    }
+  }
 
-}
+  return (
+    <section className="booking-time-slots-wrapper" ref={timeSlotsWrapperRef}>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+    </section>
+  );
+});
 
-export default BookingTimeSlots
+export default BookingTimeSlots;
